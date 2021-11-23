@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { blue, orange, lightBlue } from "@mui/material/colors";
+import { blue, orange, lightBlue, blueGrey } from "@mui/material/colors";
 import View from "./tm/View";
 import { Grid, Paper, TextField } from "@mui/material";
 import ClientMemoList from "./ClientMemoList";
@@ -37,7 +37,9 @@ const HeaderWrapper = styled.div`
 
 const HeaderTitle = styled.span`
   height: 30px;
-  font-size: 23px;
+  font-size: 26px;
+  font-weight: 700;
+  color: ${blueGrey[900]};
   display: flex;
   flex: 1;
   justify-content: flex-start;
