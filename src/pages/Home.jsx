@@ -4,6 +4,8 @@ import Background3 from "../bg/bg-3.jpg";
 import { Grid, Paper } from "@mui/material";
 import { grey, blueGrey, yellow, purple } from "@mui/material/colors";
 import SideMenu from "../components/SideMenu";
+import TmManager from "../components/TmManager";
+import { NoEncryption } from "@mui/icons-material";
 
 const BackgroundImg = styled.div`
   width: 100vw;
@@ -42,7 +44,7 @@ const SideWrapper = styled.div`
   height: 100%;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.9);
 `;
@@ -53,26 +55,39 @@ const BodyWrapper = styled.div`
   height: 100%;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.45);
   border-radius: 12px;
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `;
 const Home = () => {
   return (
     <Background>
       <Container>
-        <Grid container spacing={1} sx={{ height: "100%" }}>
-          <Grid item lg={1.5}></Grid>
-          <Grid item lg={1.5}>
+        <Grid container spacing={3} sx={{ height: "100%" }}>
+          <Grid
+            item
+            lg={1.5}
+            display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
+          ></Grid>
+          <Grid item md={2} lg={1.5}>
             <SideWrapper>
               <SideMenu />
             </SideWrapper>
           </Grid>
-          <Grid item lg={7.5}>
-            <BodyWrapper></BodyWrapper>
+          <Grid item md={10} lg={7.5}>
+            <BodyWrapper>
+              <TmManager />
+            </BodyWrapper>
           </Grid>
-          <Grid item lg={1.5}></Grid>
+          <Grid
+            item
+            lg={1.5}
+            display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
+          ></Grid>
         </Grid>
       </Container>
     </Background>

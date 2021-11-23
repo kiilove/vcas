@@ -1,12 +1,14 @@
 import {
   faCalendarAlt,
   faGraduationCap,
+  faIdCard,
   faListUl,
   faPhone,
+  faHeart
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@mui/material";
-import { deepOrange, grey, indigo } from "@mui/material/colors";
+import { deepOrange, grey, indigo, blueGrey } from "@mui/material/colors";
 import React from "react";
 import styled from "styled-components";
 
@@ -43,7 +45,7 @@ const LogoBox = styled.div`
 const LogoText = styled.span`
   font-size: 35px;
   font-weight: 700;
-  color: white;
+  color: ${blueGrey[700]};
 
   width: 100%;
   height: 100%;
@@ -69,7 +71,7 @@ const MenuIcon = styled.span`
   justify-content: center;
   align-items: center;
   font-size: 21px;
-  color: ${indigo[900]};
+  color: ${grey[600]};
 `;
 
 const MenuTitle = styled.span`
@@ -79,31 +81,38 @@ const MenuTitle = styled.span`
   justify-content: flex-start;
   align-items: center;
   font-size: 16px;
-  font-weight: 600;
-  color: ${indigo[900]};
+  font-weight: 500;
+  color: ${grey[600]};
 `;
 
 const MenuItem = styled.div`
   width: 90%;
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-
   &:hover {
-    background-image: linear-gradient(
-      111.5deg,
-      rgba(242, 246, 254, 1) 0.3%,
-      rgba(227, 233, 252, 1) 99.1%
-    );
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.95);
+
     cursor: pointer;
     border-radius: 10px;
   }
 
-  &:hover ${MenuIcon}, &:hover ${MenuTitle} {
-    color: ${grey[700]};
+  &:hover ${MenuIcon} {
+    color: ${indigo[700]};
   }
+`;
+
+const BottomBox = styled.div`
+  width: 100%;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const menuArray = [
@@ -117,6 +126,7 @@ const menuArray = [
   { id: 3, name: "scheduler", title: "상담 업무", icon: faPhone },
 
   { id: 4, name: "scheduler", title: "오늘 성과", icon: faGraduationCap },
+  { id: 5, name: "client", title: "고객데이터", icon: faIdCard },
 ];
 
 const SideMenu = () => {
@@ -137,6 +147,7 @@ const SideMenu = () => {
               </MenuItem>
             ))}
           </MenuBox>
+          <BottomBox>로그아웃</BottomBox>
         </ItemWrapper>
       </Wrapper>
     </Container>
