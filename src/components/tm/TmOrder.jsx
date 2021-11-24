@@ -3,59 +3,47 @@ import { green } from "@mui/material/colors";
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 100%;
-  min-height: 400px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: space-between;
-  margin: 10px auto;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-`;
 const BoxWrapper = styled.div`
+  height: 100%;
+  width: 100%;
   display: flex;
-  padding: 10px;
+  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.5);
 `;
 
 const CardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
   justify-content: space-between;
-  min-height: 400px;
-  margin-top: 20px;
+  min-height: 200px;
+  padding: 20px;
 `;
 
 const CardPaper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 40%;
+  width: 38%;
   height: 40px;
   padding: 10px;
+  margin-bottom: 10px;
   border-radius: 10px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.5);
 `;
 
 const CardAvatar = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex: 1;
 `;
@@ -64,8 +52,9 @@ const CardTelNum = styled.span`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 17px;
+  font-size: 15px;
   flex: 2;
+  margin-left: 10px;
 `;
 const dummyClient = [
   { id: 1, telNum: 12345671 },
@@ -81,24 +70,27 @@ const dummyClient = [
 ];
 const TmOrder = () => {
   return (
-    <Container>
-      <Wrapper>
-        <BoxWrapper>
-          <CardWrapper>
-            {dummyClient.map((item) => (
-              <CardPaper>
-                <CardAvatar>
-                  <Avatar sx={{ fontSize: 13, backgroundColor: green[200] }}>
-                    1234
-                  </Avatar>
-                </CardAvatar>
-                <CardTelNum>{item.telNum}</CardTelNum>
-              </CardPaper>
-            ))}
-          </CardWrapper>
-        </BoxWrapper>
-      </Wrapper>
-    </Container>
+    <BoxWrapper>
+      <CardWrapper>
+        {dummyClient.slice(0, 6).map((item) => (
+          <CardPaper>
+            <CardAvatar>
+              <Avatar
+                sx={{
+                  fontSize: 11,
+                  width: "25px",
+                  height: "25px",
+                  backgroundColor: green[200],
+                }}
+              >
+                1234
+              </Avatar>
+            </CardAvatar>
+            <CardTelNum>{item.telNum}</CardTelNum>
+          </CardPaper>
+        ))}
+      </CardWrapper>
+    </BoxWrapper>
   );
 };
 

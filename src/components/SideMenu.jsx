@@ -4,7 +4,7 @@ import {
   faIdCard,
   faListUl,
   faPhone,
-  faHeart
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@mui/material";
