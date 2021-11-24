@@ -4,11 +4,9 @@ import {
   faIdCard,
   faListUl,
   faPhone,
-  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Menu } from "@mui/material";
-import { deepOrange, grey, indigo, blueGrey } from "@mui/material/colors";
+import { grey, indigo, blueGrey } from "@mui/material/colors";
 import React from "react";
 import styled from "styled-components";
 
@@ -18,11 +16,11 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const ItemWrapper = styled.div`
@@ -33,7 +31,6 @@ const ItemWrapper = styled.div`
 
   padding: 0px;
   width: 100%;
-  height: 100%;
 `;
 
 const LogoBox = styled.div`
@@ -51,13 +48,12 @@ const LogoText = styled.span`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 20px;
 `;
 
 const MenuBox = styled.div`
   width: 100%;
-  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -87,7 +83,7 @@ const MenuTitle = styled.span`
 
 const MenuItem = styled.div`
   width: 90%;
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,8 +91,7 @@ const MenuItem = styled.div`
   &:hover {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.95);
-
+    background-color: rgba(255, 255, 255, 0.45);
     cursor: pointer;
     border-radius: 10px;
   }
@@ -147,7 +142,6 @@ const SideMenu = () => {
               </MenuItem>
             ))}
           </MenuBox>
-          <BottomBox>로그아웃</BottomBox>
         </ItemWrapper>
       </Wrapper>
     </Container>

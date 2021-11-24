@@ -6,6 +6,8 @@ const HeaderWrapper = styled.div`
   width: 100%;
   height: 50px;
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
   justify-content: space-space-around;
 `;
 
@@ -29,11 +31,11 @@ const HeaderMenu = styled.div`
   align-items: center;
   margin-right: 10px;
 `;
-const ComponentHeader = () => {
+const ComponentHeader = (props) => {
   return (
     <div>
       <HeaderWrapper>
-        <HeaderTitle>상담 업무</HeaderTitle>
+        <HeaderTitle>{props.title}</HeaderTitle>
         <HeaderMenu></HeaderMenu>
       </HeaderWrapper>
     </div>

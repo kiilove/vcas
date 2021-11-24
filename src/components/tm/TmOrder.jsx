@@ -9,7 +9,7 @@ const BoxWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
   backdrop-filter: blur(16px) saturate(180%);

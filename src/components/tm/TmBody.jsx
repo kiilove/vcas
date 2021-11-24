@@ -1,6 +1,8 @@
 import { Grid, Paper } from "@mui/material";
 import React from "react";
+import TmMemoList from "./TmMemoList";
 import TmOrder from "./TmOrder";
+import TmTodos from "./TmTodos";
 
 const Body = () => {
   return (
@@ -9,10 +11,10 @@ const Body = () => {
         <TmOrder />
       </Grid>
       <Grid item xs={12} sm md={4}>
-        <Paper>Todo</Paper>
+        <TmTodos />
       </Grid>
       <Grid item xs={12} sm md={4}>
-        <Paper>MemoList</Paper>
+        <TmMemoList />
       </Grid>
     </Grid>
   );

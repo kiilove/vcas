@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { blue, grey, pink, yellow } from "@mui/material/colors";
-import { Button, Grid, Paper, Rating, Stack, TextField } from "@mui/material";
+import { Stack, TextField, Button } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
@@ -91,8 +90,16 @@ const Extra = () => {
           </FormControl>
         </ExtraSelectBox>
       </Stack>
-      <Stack justifyContent="center" alignItems="center" width="100%">
-        <TextField size="small" label="이름" sx={{ width: "90%" }} />
+      <Stack
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+      >
+        <TextField size="small" label="이름" sx={{ width: "70%" }} />
+        <Button variant="outlined" sx={{ ml: 1, height: "40px" }}>
+          저장
+        </Button>
       </Stack>
     </ExtraWrapper>
   );

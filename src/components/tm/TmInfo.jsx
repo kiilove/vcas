@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { blue, grey, pink, yellow } from "@mui/material/colors";
+import { blue, pink, yellow } from "@mui/material/colors";
 import Checkbox from "@mui/material/Checkbox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

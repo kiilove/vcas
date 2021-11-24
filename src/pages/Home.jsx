@@ -1,19 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import Background1 from "../bg/bg-1.jpg";
+import Background2 from "../bg/bg-2.jpg";
 import Background3 from "../bg/bg-3.jpg";
-import { Grid, Paper, Stack } from "@mui/material";
-import { grey, blueGrey, yellow, purple } from "@mui/material/colors";
+import Background4 from "../bg/bg-4.jpg";
+import Background5 from "../bg/bg-5.jpg";
+import Background6 from "../bg/bg-6.jpg";
+import Background7 from "../bg/bg-7.jpg";
+import Background8 from "../bg/bg-8.jpg";
+import { Grid } from "@mui/material";
 import SideMenu from "../components/SideMenu";
 import TmManager from "../components/TmManager";
-import { NoEncryption } from "@mui/icons-material";
 
 const BackgroundImg = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-image: url(${Background3});
+  background-image: url(${Background5});
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const Background = styled.div`
@@ -39,7 +47,7 @@ const SideWrapper = styled.div`
   height: auto;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.9);
 `;
@@ -52,7 +60,7 @@ const BodyWrapper = styled.div`
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 12px;
-  border: 1.5px solid rgba(238, 218, 218, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -60,8 +68,14 @@ const BodyWrapper = styled.div`
 `;
 const Home = () => {
   return (
-    <Background>
-      <Grid container spacing={2} height={{ md: "800px" }}>
+    <BackgroundImg>
+      <Grid
+        container
+        spacing={2}
+        height={{ md: "850px" }}
+        justifyContent="center"
+        alignItems="stretch"
+      >
         <Grid
           item
           xs={false}
@@ -70,14 +84,14 @@ const Home = () => {
         ></Grid>
         <Grid
           item
-          lg={2}
+          lg={1.5}
           display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}
         >
           <SideWrapper>
             <SideMenu />
           </SideWrapper>
         </Grid>
-        <Grid item lg={7}>
+        <Grid item lg={7.5}>
           <BodyWrapper>
             <TmManager />
           </BodyWrapper>
@@ -88,7 +102,7 @@ const Home = () => {
           display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}
         ></Grid>
       </Grid>
-    </Background>
+    </BackgroundImg>
   );
 };
 
