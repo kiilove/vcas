@@ -10,7 +10,9 @@ import Background7 from "../bg/bg-7.jpg";
 import Background8 from "../bg/bg-8.jpg";
 import { Grid } from "@mui/material";
 import SideMenu from "../components/SideMenu";
-import TmManager from "../components/TmManager";
+import TmManager from "./TmManager";
+
+import ClientTable from "./ClientManage";
 
 const BackgroundImg = styled.div`
   width: 100%;
@@ -45,9 +47,11 @@ const SideWrapper = styled.div`
   width: 100%;
   min-width: 150px;
   height: auto;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
+  /* backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%); */
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
+  background-color: rgba(255, 255, 255, 0.65);
   border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.9);
 `;
@@ -56,8 +60,8 @@ const BodyWrapper = styled.div`
   width: 100%;
   min-width: auto;
   height: auto;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.7);
@@ -68,7 +72,7 @@ const BodyWrapper = styled.div`
 `;
 const Home = () => {
   return (
-    <BackgroundImg>
+    <Background>
       <Grid
         container
         spacing={2}
@@ -93,7 +97,8 @@ const Home = () => {
         </Grid>
         <Grid item lg={7.5}>
           <BodyWrapper>
-            <TmManager />
+            {/* <TmManager /> */}
+            <ClientTable />
           </BodyWrapper>
         </Grid>
         <Grid
@@ -102,7 +107,7 @@ const Home = () => {
           display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}
         ></Grid>
       </Grid>
-    </BackgroundImg>
+    </Background>
   );
 };
 

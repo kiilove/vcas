@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { blue, orange, lightBlue, blueGrey } from "@mui/material/colors";
-import View from "./tm/TmView";
-import { Grid, Paper, TextField } from "@mui/material";
-import ClientMemoList from "./ClientMemoList";
-import TmOrder from "./tm/TmOrder";
-import Body from "./tm/TmBody";
-import ComponentHeader from "./ComponentHeader";
+import { Grid } from "@mui/material";
+import View from "../components/tm/TmView";
+import Body from "../components/tm/TmBody";
+import ComponentHeader from "../components/ComponentHeader";
 
 const TmManager = () => {
   return (
