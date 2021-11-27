@@ -6,6 +6,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import { grey, indigo, blueGrey } from "@mui/material/colors";
 import React from "react";
 import styled from "styled-components";
@@ -111,17 +112,42 @@ const BottomBox = styled.div`
 `;
 
 const menuArray = [
-  { id: 1, name: "scheduler", title: "일정표(캘린더)", icon: faCalendarAlt },
+  {
+    id: 1,
+    name: "scheduler",
+    title: "일정표(캘린더)",
+    icon: faCalendarAlt,
+    link: "/",
+  },
   {
     id: 2,
     name: "scheduler",
     title: "할 일 목록(Todo)",
     icon: faListUl,
+    link: "/",
   },
-  { id: 3, name: "scheduler", title: "상담 업무", icon: faPhone },
+  {
+    id: 3,
+    name: "scheduler",
+    title: "상담 업무",
+    icon: faPhone,
+    link: "/tmManager",
+  },
 
-  { id: 4, name: "scheduler", title: "오늘 성과", icon: faGraduationCap },
-  { id: 5, name: "client", title: "고객데이터", icon: faIdCard },
+  {
+    id: 4,
+    name: "scheduler",
+    title: "오늘 성과",
+    icon: faGraduationCap,
+    link: "/",
+  },
+  {
+    id: 5,
+    name: "client",
+    title: "고객데이터",
+    icon: faIdCard,
+    link: "/client",
+  },
 ];
 
 const SideMenu = () => {
@@ -134,12 +160,22 @@ const SideMenu = () => {
           </LogoBox>
           <MenuBox>
             {menuArray.map((item) => (
-              <MenuItem key={item.id}>
-                <MenuIcon>
-                  <FontAwesomeIcon icon={item.icon} />
-                </MenuIcon>
-                <MenuTitle>{item.title}</MenuTitle>
-              </MenuItem>
+              <Link
+                to={item.link}
+                style={{
+                  textDecoration: "none",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <MenuItem key={item.id}>
+                  <MenuIcon>
+                    <FontAwesomeIcon icon={item.icon} />
+                  </MenuIcon>
+                  <MenuTitle>{item.title}</MenuTitle>
+                </MenuItem>
+              </Link>
             ))}
           </MenuBox>
         </ItemWrapper>

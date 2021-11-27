@@ -4,23 +4,27 @@ import faker from "faker/locale/ko";
 
 import ComponentHeader from "../components/ComponentHeader";
 import ClientTable from "../components/table/ClientTable";
+import moment from "moment";
 
 faker.seed(10);
 
 const ClientManage = () => {
   const columns = useMemo(() => [
-    { accessor: "name", Header: "이름" },
-    { accessor: "email", Header: "이메일" },
     { accessor: "phone", Header: "전화번호" },
+    { accessor: "date", Header: "추가일자" },
+    { accessor: "project", Header: "추가된 프로젝트" },
   ]);
 
   const data = useMemo(() =>
     Array(10)
       .fill()
       .map(() => ({
-        name: faker.name.lastName() + faker.name.firstName(),
-        email: faker.internet.email(),
+        // name: faker.name.lastName() + faker.name.firstName(),
         phone: faker.phone.phoneNumber(),
+        date: moment(faker.date.soon(5, new Date()).toUTCString()).format(
+          "YYYY-MM-DD"
+        ),
+        project: faker.random.words(),
       }))
   );
 

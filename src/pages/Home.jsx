@@ -12,7 +12,9 @@ import { Grid } from "@mui/material";
 import SideMenu from "../components/SideMenu";
 import TmManager from "./TmManager";
 
-import ClientTable from "./ClientManage";
+import ClientManage from "./ClientManage";
+
+import { Route, Routes } from "react-router-dom";
 
 const BackgroundImg = styled.div`
   width: 100%;
@@ -98,7 +100,11 @@ const Home = () => {
         <Grid item lg={7.5}>
           <BodyWrapper>
             {/* <TmManager /> */}
-            <ClientTable />
+            <Routes>
+              <Route exact path="/" element={<TmManager />} />
+              <Route path="/client" element={<ClientManage />} />
+              <Route path="/tmManager" element={<TmManager />} />
+            </Routes>
           </BodyWrapper>
         </Grid>
         <Grid
