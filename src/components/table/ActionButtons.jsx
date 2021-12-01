@@ -44,7 +44,7 @@ const ActionButtons = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <ImportExcel />
+        <ImportExcel handleClose={handleClose} />
       </Modal>
     </ButtonWrapper>
   );
