@@ -103,19 +103,28 @@ const ImportExcel = (props) => {
         const wb = await XLSX.read(buggerArray, { type: "binary" });
         const wsname = await wb.SheetNames[0];
         const ws = await wb.Sheets[wsname];
-        const checkHeader = await XLSX.utils.sheet_to_json(ws.header);
-        console.log(checkHeader);
 
-        let data = await XLSX.utils.sheet_to_json(ws);
-        data.forEach((obj) => renameKey(obj, "전화번호", "clientNumber"));
-        //console.log(Object.values(JSON.stringify(data)));
-        console.log(JSON.stringify(data));
-        //await setItems(JSON.stringify(data));
+        let data = await XLSX.utils.sheet_to_json(ws, {
+          header: ["clientNumber"],
+        });
+        //console.log(XLSX.utils.sheet_to_json([{ A: "1" }]));
+        //data.forEach((obj) => renameKey(obj, "전화번호", "clientNumber"));
+        //console.log(data.keys());
+        // if (JSON.stringify(!isNaN(Object.values(data[1])))) {
+        //   alert("전화번호만 입력되어 있어야합니다.");
+        // } else {
+        //   console.log(JSON.stringify(data));
+        //   setRows(data.length);
+        //   setItems(JSON.stringify(data));
+        // }
+
+        //alert(Object.values(data[0]));
+        if (isNaN(Object.values(data[0]))) {
+          delete data[0];
+        }
+        console.log(JSON.stringify(data.filter((x) => x !== null)));
         setRows(data.length);
         setItems(JSON.stringify(data));
-        //console.log(items);
-
-        //console.log(JSON.stringify(items));
       };
     } catch (error) {
       console.error({ 읽기에러: error });
